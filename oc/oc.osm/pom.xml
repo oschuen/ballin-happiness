@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>oc</groupId>
+		<artifactId>oc</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<artifactId>oc.osm</artifactId>
+	<version>1.0.0</version>
+	<name>oc.osm</name>
+	<description>Data Types representing OSM Data</description>
+	<dependencies>
+		<dependency>
+			<groupId>oc</groupId>
+			<artifactId>oc.io</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<configuration>
+					<instrumentation>
+						<excludes>
+							<exclude>oc/osm/**/*.class</exclude>
+						</excludes>
+					</instrumentation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
