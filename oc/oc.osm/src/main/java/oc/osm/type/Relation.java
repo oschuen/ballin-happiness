@@ -185,6 +185,8 @@ public class Relation implements Externalizable {
 	}
 
 	/**
+	 * Fixed <a href="https://github.com/oschuen/ballin-happiness/issues/1">Issue #1</a>
+         *
 	 * @return extension of this relation
 	 */
 	@SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
@@ -205,9 +207,9 @@ public class Relation implements Externalizable {
 				final Bounds wayBounds = way.getBounds();
 				if (wayBounds != null) {
 					if (bounds == null) {
-						bounds = new Bounds();
+						bounds = new Bounds(wayBounds);
 					} else {
-						bounds.increaseBounds(way.getBounds());
+						bounds.increaseBounds(wayBounds);
 					}
 				}
 				break;
@@ -218,7 +220,7 @@ public class Relation implements Externalizable {
 					if (bounds == null) {
 						bounds = new Bounds(relationBounds);
 					} else {
-						bounds.increaseBounds(relation.getBounds());
+						bounds.increaseBounds(relationBounds);
 					}
 				}
 				break;
